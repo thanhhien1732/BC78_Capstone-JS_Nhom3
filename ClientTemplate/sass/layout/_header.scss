@@ -1,0 +1,86 @@
+header {
+    background-color: transparent;
+    position: relative;
+    z-index: 9;
+    padding: 15px 0;
+
+    .header-content {
+        display: flex;
+        align-items: center;
+
+        .header-logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: #e03550;
+        }
+
+        .main-menu {
+            ul {
+                display: flex;
+                justify-content: space-between;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+
+                    a {
+                        color: #fff;
+                        display: block;
+                        font-weight: 700;
+                        text-transform: uppercase;
+
+                        &::before {
+                            content: "";
+                            width: 0;
+                            height: 3px;
+                            background-color: #e03550;
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            bottom: -10px;
+                            transition: all 0.5s;
+                        }
+
+                        &:hover {
+                            color: #e03550;
+
+                            &::before {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    &.active {
+                        a {
+                            color: #e03550;
+
+                            &::before {
+                                width: 100%;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .header-right {
+            li {
+                display: inline;
+                float: right;
+                position: relative;
+                font-size: 24px;
+                margin-left: 35px;
+
+                a {
+                    color: #fff;
+
+                    &:hover {
+                        color: #e03550;
+                    }
+                }
+            }
+        }
+    }
+}

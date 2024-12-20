@@ -1,0 +1,37 @@
+.service-area {
+    margin-top: -10px;
+    padding-bottom: 70px;
+
+    .service-img {
+        float: left;
+        margin-right: 24px;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .service-info {
+        overflow: hidden;
+
+        h3 {
+            font-size: 16px;
+            position: relative;
+
+            &::after {
+                background-color: #000;
+                bottom: -4px;
+                content: "";
+                height: 2px;
+                left: 0;
+                position: absolute;
+                width: 45px;
+            }
+        }
+
+        p {
+            font-size: 13px;
+        }
+    }
+}

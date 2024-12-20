@@ -1,0 +1,118 @@
+.newsleter-area {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, #f5f5f5 50%, #eae8e8 50%) repeat scroll 0 0;
+    margin-top: 40px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    .newsleter {
+        padding-right: 15px;
+
+        h3 {
+            border-top: 1px solid #ccc;
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-top: 10px;
+            position: relative;
+            text-transform: uppercase;
+
+            &::before {
+                background-color: #333;
+                color: #fff;
+                content: "\f003";
+                display: inline-block;
+                font-family: fontawesome;
+                height: 40px;
+                line-height: 40px;
+                margin-right: 10px;
+                text-align: center;
+                width: 40px;
+            }
+        }
+
+        p {
+            font-size: 13px;
+        }
+
+        .Subscribe {
+            margin-right: 30px;
+            margin-top: 20px;
+            position: relative;
+
+            input {
+                background-color: #fff;
+                border: 0 none;
+                font-size: 12px;
+                padding: 12px 10px;
+                width: 100%;
+            }
+
+            button {
+                background-color: #333;
+                border: 0 none;
+                color: #fff;
+                font-size: 12px;
+                font-weight: 700;
+                height: 40px;
+                padding: 0 30px;
+                position: absolute;
+                right: 0;
+                text-transform: uppercase;
+                top: 0;
+                transition: all 0.3s ease 0s;
+
+                &:hover {
+                    background-color: #e03550;
+                }
+            }
+        }
+    }
+
+    .follow {
+        padding-left: 15px;
+
+        h3 {
+            border-top: 1px solid #ccc;
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-top: 10px;
+            position: relative;
+            text-transform: uppercase;
+
+            &::before {
+                background-color: #333;
+                color: #fff;
+                content: "\f003";
+                display: inline-block;
+                font-family: fontawesome;
+                height: 40px;
+                line-height: 40px;
+                margin-right: 10px;
+                text-align: center;
+                width: 40px;
+            }
+        }
+
+        p {
+            font-size: 13px;
+        }
+
+        .follow-link {
+            li {
+                display: inline-block;
+
+                a {
+                    border: 1px solid #ada4a4;
+                    border-radius: 50%;
+                    display: inline-block;
+                    font-size: 13px;
+                    height: 32px;
+                    line-height: 32px;
+                    margin-right: 15px;
+                    margin-top: 10px;
+                    text-align: center;
+                    width: 32px;
+                }
+            }
+        }
+    }
+}

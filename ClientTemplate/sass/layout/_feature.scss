@@ -1,0 +1,233 @@
+.features-product {
+    padding-top: 50px;
+
+    .product-title {
+        margin-bottom: 40px;
+
+        h2 {
+            display: inline-block;
+            font-size: 24px;
+            padding-left: 10px;
+            position: relative;
+            text-transform: uppercase;
+            margin-bottom: 0;
+
+            &::before {
+                background-color: #000;
+                content: "";
+                height: 22px;
+                left: 0;
+                position: absolute;
+                top: 1px;
+                transform: rotate(20deg);
+                width: 2px;
+            }
+
+            &::after {
+                bottom: 4px;
+                color: #f25862;
+                content: "\f04d";
+                font-family: fontawesome;
+                position: absolute;
+                right: -14px;
+                font-size: 7px;
+            }
+        }
+    }
+
+    .owl-carousel {
+        position: relative;
+        width: 100%;
+        opacity: 1;
+        display: block;
+
+        .owl-wrapper-outer {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+
+            .owl-wrapper {
+                width: 4592px;
+                left: 0px;
+                display: block;
+                transition: 2000ms;
+                transform: translate3d(-574px, 0px, 0px);
+
+                .owl-item {
+                    width: 287px;
+
+                    .single-product {
+                        float: left;
+                        width: 100%;
+                        margin: 0px 0 30px;
+                        border-right: 1px solid #fff;
+                        overflow: hidden;
+                        position: relative;
+
+                        .level-pro-new {
+                            background-color: #5eb4c1;
+                            color: #fff;
+                            min-width: 78px;
+                            padding: 5px 10px;
+                            position: absolute;
+                            right: 0;
+                            text-align: center;
+                            text-transform: uppercase;
+                            top: 0;
+                            z-index: 5;
+                        }
+
+                        .product-img {
+                            a {
+                                border-bottom: 0px solid #e6e6e6;
+                                display: block;
+                                position: relative;
+                                background-color: #EFEFEF;
+
+                                .primary-img {
+                                    transition: all 0.5s ease 0s;
+                                }
+
+                                .secondary-img {
+                                    height: 100%;
+                                    left: 0;
+                                    position: absolute;
+                                    top: 0;
+                                    transform: translate3d(100%, 0px, 0px);
+                                    transition: all 0.5s ease 0s;
+                                    width: 100%;
+                                    opacity: 0;
+                                    visibility: hidden;
+                                }
+                            }
+                        }
+
+                        .actions {
+                            background-color: #efefef;
+                            border-bottom: 0 solid #e6e6e6;
+                            border-top: 0 solid #e6e6e6;
+                            bottom: 69px;
+                            margin-top: 0;
+                            opacity: 0;
+                            overflow: hidden;
+                            padding: 0 10px;
+                            position: absolute;
+                            transition: all 0.3s ease 0s;
+                            visibility: hidden;
+                            z-index: 99;
+
+                            button.cart-btn {
+                                background-color: #333333;
+                                color: #fff;
+                                float: left;
+                                height: 35px;
+                                padding: 0px 20px;
+                                transition: all 0.3s ease 0s;
+                                border: 0 none;
+                                font-size: 12px;
+                                font-weight: 700;
+                                text-transform: uppercase;
+                            }
+
+                            .add-to-link {
+                                float: left;
+
+                                li {
+                                    margin: 0px -2px;
+                                    display: inline-block;
+
+                                    a {
+                                        background-color: #333;
+                                        border-left: 1px solid #888;
+                                        color: #fff;
+                                        height: 35px;
+                                        line-height: 35px;
+                                        position: relative;
+                                        width: 35px;
+                                        z-index: 1;
+                                        display: block;
+                                        text-align: center;
+
+                                        &::after {
+                                            background-color: #E03550;
+                                            content: "";
+                                            height: 100%;
+                                            left: 0;
+                                            position: absolute;
+                                            top: 0;
+                                            transform: translate3d(0px, 100%, 0px);
+                                            transition: all 0.3s ease 0s;
+                                            width: 100%;
+                                            z-index: -1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .product-price {
+                            background-color: transparent;
+                            padding: 5px 10px 10px;
+
+                            .product-name {
+                                margin: 7px 0 5px;
+
+                                a {
+                                    font-size: 14px;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+
+                        .price-rating {
+                            span {
+                                font-size: 15px;
+                                font-weight: 700;
+                            }
+
+                            .ratings {
+                                float: right;
+
+                                svg {
+                                    color: #ffb21e;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .owl-controls {
+            margin-top: 10px;
+            text-align: center;
+
+            .owl-buttons {
+                margin-top: -70px;
+                position: absolute;
+                right: 15px;
+                top: 0;
+
+                .owl-prev {
+                    background-position: 0 0;
+                    background: rgba(0, 0, 0, 0) url(../../img/button-slider2.png) no-repeat scroll 0 0;
+                    height: 28px;
+                    width: 33px;
+                    display: inline-block;
+                    text-indent: -999999px;
+                }
+
+                .owl-next {
+                    background-position: 100% 0;
+                    margin-left: 10px;
+                    background: rgba(0, 0, 0, 0) url(../../img/button-slider2.png) no-repeat scroll 0 0;
+                    height: 28px;
+                    width: 33px;
+                    display: inline-block;
+                    text-indent: -999999px;
+                }
+            }
+        }
+    }
+}
