@@ -53,6 +53,7 @@ const fetchListProduct = () => {
     // Pending => Block Loader
     getEleId("loader").style.display = "block";
 
+    // Call API
     const promise = axios({
         url: "https://6766c856410f84999658928f.mockapi.io/api/Products",
         method: "GET"
