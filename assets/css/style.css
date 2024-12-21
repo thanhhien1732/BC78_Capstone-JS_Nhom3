@@ -455,7 +455,7 @@ header .header-content .header-right li a:hover {
 }
 .features-product .owl-carousel .owl-controls .owl-buttons .owl-prev {
   background-position: 0 0;
-  background: rgba(0, 0, 0, 0) url(../../img/button-slider2.png) no-repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url(../img/button-slider2.png) no-repeat scroll 0 0;
   height: 28px;
   width: 33px;
   display: inline-block;
@@ -464,7 +464,7 @@ header .header-content .header-right li a:hover {
 .features-product .owl-carousel .owl-controls .owl-buttons .owl-next {
   background-position: 100% 0;
   margin-left: 10px;
-  background: rgba(0, 0, 0, 0) url(../../img/button-slider2.png) no-repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url(../img/button-slider2.png) no-repeat scroll 0 0;
   height: 28px;
   width: 33px;
   display: inline-block;
@@ -530,36 +530,11 @@ header .header-content .header-right li a:hover {
   position: relative;
   background-color: #EFEFEF;
 }
-.product-main-items .single-product .product-img a .primary-img {
-  transition: all 0.5s ease 0s;
-}
-.product-main-items .single-product .product-img a .secondary-img {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: translate3d(100%, 0px, 0px);
-  transition: all 0.5s ease 0s;
-  width: 100%;
-  opacity: 0;
-  visibility: hidden;
-}
-.product-main-items .single-product:hover .product-img a .primary-img {
-  transform: translate3d(-100%, 0px, 0px);
-  opacity: 0;
-  visibility: hidden;
-}
-.product-main-items .single-product:hover .product-img a .secondary-img {
-  visibility: visible;
-  z-index: 9;
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
 .product-main-items .single-product .actions {
   background-color: #efefef;
   border-bottom: 0 solid #e6e6e6;
   border-top: 0 solid #e6e6e6;
-  bottom: 69px;
+  bottom: 63px;
   margin-top: 0;
   opacity: 0;
   overflow: hidden;
@@ -627,12 +602,10 @@ header .header-content .header-right li a:hover {
   background-color: transparent;
   padding: 5px 10px 10px;
 }
-.product-main-items .single-product .product-price .product-name {
+.product-main-items .single-product .product-price a {
   margin: 7px 0 5px;
-}
-.product-main-items .single-product .product-price .product-name a {
-  font-size: 14px;
-  text-transform: uppercase;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
 }
 .product-main-items .single-product .price-rating span {
   font-size: 15px;
