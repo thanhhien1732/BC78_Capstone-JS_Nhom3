@@ -4,7 +4,7 @@ const renderListProduct = (data) => {
     let content = "";
 
     data.forEach((product) => {
-        const { imageUrl, name, description, price } = product
+        const { imageUrl, name, price } = product
         content += `
             <div class="col-lg-3 col-md-6">
                 <div class="single-product">
@@ -13,7 +13,7 @@ const renderListProduct = (data) => {
                     </div>
                     <div class="product-img">
                         <a href="#">
-                            <img src="./ClientTemplate/img/25.png">
+                            <img src="../../assets/img/${imageUrl}">
                         </a>
                     </div>
                     <div class="actions">
@@ -27,10 +27,10 @@ const renderListProduct = (data) => {
                     </div>
                     <div class="product-price">
                         <div class="product-name">
-                            <a href="#" title="Fusce aliquam">Fusce aliquam</a>
+                            <a href="#">${name}</a>
                         </div>
                         <div class="price-rating">
-                            <span>$170.00</span>
+                            <span>$${price}</span>
                             <div class="ratings">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -54,7 +54,7 @@ const fetchListProduct = () => {
     getEleId("loader").style.display = "block";
 
     const promise = axios({
-        url: "https://67663904410f8499965719d0.mockapi.io/api/Products",
+        url: "https://6766c856410f84999658928f.mockapi.io/api/Products",
         method: "GET"
     })
 

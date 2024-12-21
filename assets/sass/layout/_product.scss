@@ -6,32 +6,11 @@
 
         h2 {
             display: inline-block;
-            font-size: 24px;
+            font-size: 26px;
             padding-left: 10px;
             position: relative;
             text-transform: uppercase;
             margin-bottom: 0;
-
-            &::before {
-                background-color: #000;
-                content: "";
-                height: 22px;
-                left: 0;
-                position: absolute;
-                top: 1px;
-                transform: rotate(20deg);
-                width: 2px;
-            }
-
-            &::after {
-                bottom: 4px;
-                color: #f25862;
-                content: "\f04d";
-                font-family: fontawesome;
-                position: absolute;
-                right: -14px;
-                font-size: 7px;
-            }
         }
     }
 
@@ -69,7 +48,7 @@
             background-color: #efefef;
             border-bottom: 0 solid #e6e6e6;
             border-top: 0 solid #e6e6e6;
-            bottom: 63px;
+            bottom: 78px;
             margin-top: 0;
             opacity: 0;
             overflow: hidden;
@@ -148,17 +127,21 @@
             background-color: transparent;
             padding: 5px 10px 10px;
 
-            a {
+            .product-name {
                 margin: 7px 0 5px;
-                font-size: 14px !important;
-                text-transform: uppercase !important;
+
+                a {
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
             }
         }
 
         .price-rating {
             span {
-                font-size: 15px;
-                font-weight: 700;
+                font-size: 16px;
+                font-weight: bold;
             }
 
             .ratings {
