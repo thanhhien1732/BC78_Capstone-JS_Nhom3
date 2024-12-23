@@ -14,25 +14,21 @@
         li {
             background-color: #383838;
             font-size: 13px;
-            // line-height: 25px;
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
 
             svg {
                 background-color: #838383;
                 color: #c4c4c4;
                 width: 12px;
                 height: auto;
-                // line-height: 34px;
                 margin-right: 10px;
-                // text-align: center;
                 padding: 10px;
             }
-
-            // span {
-
-            // }
         }
     }
+
 
     h3 {
         border-top: 1px solid #959595;

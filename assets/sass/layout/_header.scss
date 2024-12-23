@@ -81,6 +81,22 @@ header {
                     &:hover {
                         color: #e03550;
                     }
+
+                    .total-qty {
+                        position: absolute;
+                        top: -2px;
+                        right: -8px;
+                        background-color: #333;
+                        color: #fff;
+                        font-size: 10px;
+                        font-weight: bold;
+                        width: 16px;
+                        height: 16px;
+                        line-height: 16px;
+                        text-align: center;
+                        border-radius: 50%;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                    }
                 }
             }
         }
@@ -104,5 +120,48 @@ header.nav-fixed {
 
     .header-right li a {
         color: #333;
+
+        .total-qty {
+            background-color: #fff;
+            color: #333;
+        }
     }
+}
+
+
+
+.cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }

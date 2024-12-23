@@ -1,8 +1,10 @@
 const getEleId = (id) => document.getElementById(id);
 
+// Render List Product
 const renderListProduct = (data) => {
     let content = "";
 
+    // Loop Products
     data.forEach((product) => {
         const { imageUrl, name, price } = product
         content += `
@@ -17,7 +19,7 @@ const renderListProduct = (data) => {
                         </a>
                     </div>
                     <div class="actions">
-                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                        <button type="submit" class="cart-btn">add to cart</button>
                         <ul class="add-to-link">
                             <li><a href="#"> <i class="fa fa-search"></i></a></li>
                             <li><a href="#"> <i class="fa-regular fa-heart"></i></a></li>
@@ -48,6 +50,7 @@ const renderListProduct = (data) => {
     getEleId("mainProduct").innerHTML = content;
 }
 
+// Fetch List Product
 const fetchListProduct = () => {
     // Pending => Block Loader
     getEleId("loader").style.display = "block";
@@ -73,3 +76,4 @@ const fetchListProduct = () => {
 
 fetchListProduct();
 
+// ================== Tính năng giỏ hàng ==================
