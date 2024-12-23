@@ -48,7 +48,7 @@
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <link rel="stylesheet" href="./customer/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -89,8 +89,8 @@
                                 </li>
 
                                 <li>
-                                    <a href="#">
-                                        <i class="fa fa-search"></i>
+                                    <a href="./admin/index.html">
+                                        <i class="fa-solid fa-user-gear"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -105,7 +105,7 @@
     <section class="slider-area owl-carousel owl-theme">
         <!-- Slide 1 -->
         <div class="slider-content bg1 bg-custom">
-            <img src="./img/slider-logo.png" alt="">
+            <img src="./assets/img/slider-logo.png" alt="">
             <h1>Academy of sport</h1>
             <h2>sports center james</h2>
             <h3>Lorem Ipsum is simply dummy text of the printing</h3>
@@ -113,7 +113,7 @@
         </div>
         <!-- Slide 2 -->
         <div class="slider-content bg2 bg-custom">
-            <img src="./img/slider-logo.png" alt="">
+            <img src="./assets/img/slider-logo.png" alt="">
             <h1>Academy of sport</h1>
             <h2>sports center james</h2>
             <h3>Lorem Ipsum is simply dummy text of the printing</h3>
@@ -128,7 +128,7 @@
                 <div class="col-md-4">
                     <div class="single-service">
                         <div class="service-img">
-                            <img src="./img/icon-1.png" alt="">
+                            <img src="./assets/img/icon-1.png" alt="">
                         </div>
                         <div class="service-info">
                             <h3>FREE SHIPPING</h3>
@@ -139,7 +139,7 @@
                 <div class="col-md-4">
                     <div class="single-service">
                         <div class="service-img">
-                            <img src="./img/icon-1.png" alt="">
+                            <img src="./assets/img/icon-1.png" alt="">
                         </div>
                         <div class="service-info">
                             <h3>FREE SHIPPING</h3>
@@ -150,7 +150,7 @@
                 <div class="col-md-4">
                     <div class="single-service">
                         <div class="service-img">
-                            <img src="./img/icon-1.png" alt="">
+                            <img src="./assets/img/icon-1.png" alt="">
                         </div>
                         <div class="service-info">
                             <h3>FREE SHIPPING</h3>
@@ -221,7 +221,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-contact">
-                        <img src="./img/logo-white.png" alt="">
+                        <img src="./assets/img/logo-white.png" alt="">
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                             tincidunt.</p>
                         <ul class="address">
@@ -289,7 +289,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="payment-icon">
-                        <img src="./img/payment.png" alt="">
+                        <img src="./assets/img/payment.png" alt="">
                     </div>
                 </div>
             </div>
@@ -332,12 +332,28 @@
         })
     </script>
 
+    <!-- Header JS -->
+    <script>
+        // Khi cuộn xuống, thêm lớp cố định và thay đổi màu
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.querySelector("header"); // Chọn phần header
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 80) {
+                    header.classList.add("nav-fixed");
+                } else {
+                    header.classList.remove("nav-fixed");
+                }
+            });
+        });
+    </script>
+
     <!-- Axios CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"
         integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script type="module" src="./customer/src/index.js"></script>
+    <script type="module" src="./assets/src/index.js"></script>
 
 </body>
 

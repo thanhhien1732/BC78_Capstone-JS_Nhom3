@@ -13,12 +13,11 @@ const renderListProduct = (data) => {
                     </div>
                     <div class="product-img">
                         <a href="#">
-                            <img src="../../img/${imageUrl}">
+                            <img src="./assets/img/${imageUrl}">
                         </a>
                     </div>
                     <div class="actions">
-                        <button type="submit" class="cart-btn" title="Add to cart">add to
-                            cart</button>
+                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
                         <ul class="add-to-link">
                             <li><a href="#"> <i class="fa fa-search"></i></a></li>
                             <li><a href="#"> <i class="fa-regular fa-heart"></i></a></li>

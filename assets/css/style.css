@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -96,6 +97,8 @@ header {
   position: relative;
   z-index: 9;
   padding: 15px 0;
+  border-bottom: 1px solid rgba(231, 231, 231, 0.18);
+  transition: all 0.5s ease 0s;
 }
 header .header-content {
   display: flex;
@@ -156,6 +159,24 @@ header .header-content .header-right li a {
 }
 header .header-content .header-right li a:hover {
   color: #e03550;
+}
+
+/* Header khi cố định */
+header.nav-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+header.nav-fixed .main-menu ul li a {
+  color: #333;
+}
+header.nav-fixed .header-right li a {
+  color: #333;
 }
 
 .slider-area {
@@ -225,11 +246,11 @@ header .header-content .header-right li a:hover {
 }
 
 .bg1 {
-  background-image: url("../../../img/slider-3.jpg");
+  background-image: url("./../img/slider-3.jpg");
 }
 
 .bg2 {
-  background-image: url("../../../img/slider-4.jpg");
+  background-image: url("./../img/slider-4.jpg");
 }
 
 .bg-custom {
