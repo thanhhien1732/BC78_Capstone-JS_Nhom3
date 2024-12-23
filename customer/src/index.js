@@ -13,7 +13,7 @@ const renderListProduct = (data) => {
                     </div>
                     <div class="product-img">
                         <a href="#">
-                            <img src="../../assets/img/${imageUrl}">
+                            <img src="../../img/${imageUrl}">
                         </a>
                     </div>
                     <div class="actions">
