@@ -753,77 +753,105 @@ header.nav-fixed .header-right li a {
   color: black;
 }
 .cart .side-nav .cart-items {
-  display: flex;
-  position: absolute;
-  width: 90%;
-  margin: 0 5%;
-  height: 50%;
-  top: 10%;
-  flex-direction: column;
+  flex-grow: 1;
+  /* Đẩy phần tử này chiếm hết không gian có sẵn */
+  overflow-y: auto;
+  /* Hiển thị thanh cuộn dọc */
+  overflow-x: hidden;
+  /* Ẩn thanh cuộn ngang */
+  margin: 2% 3%;
+  height: auto;
+  max-height: calc(100% - 150px);
+  /* Trừ đi khoảng cách cho phần final */
+  scrollbar-width: thin;
+  /* Thu hẹp thanh cuộn */
+  scrollbar-color: #e03550 #f1f1f1;
+  /* Màu sắc thanh cuộn */
+  text-align: center;
+  /* Tùy chỉnh thanh cuộn cho WebKit */
+}
+.cart .side-nav .cart-items::-webkit-scrollbar {
+  width: 8px;
+  /* Độ rộng thanh cuộn */
+}
+.cart .side-nav .cart-items::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Màu nền của track */
+}
+.cart .side-nav .cart-items::-webkit-scrollbar-thumb {
+  background-color: #e03550;
+  /* Màu của thanh cuộn */
+  border-radius: 20px;
+  /* Làm bo góc thanh cuộn */
+  border: 3px solid #f1f1f1;
+  /* Tạo khoảng cách xung quanh thanh cuộn */
 }
 .cart .side-nav .cart-items .empty-cart {
-  margin: auto 0;
-  font-size: 2rem;
-  font-weight: 900;
-  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  opacity: 0.5;
 }
 .cart .side-nav .cart-items .cart-item {
   display: flex;
-  height: 5rem;
-  width: 100%;
   align-items: center;
-  justify-content: space-around;
+  text-align: center;
   border-bottom: 1px solid black;
+  padding: 10px 0;
 }
 .cart .side-nav .cart-items .cart-item:hover {
   background: rgba(255, 255, 255, 0.25);
 }
 .cart .side-nav .cart-items .cart-item .cart-img {
   display: flex;
-  width: 5rem;
-  height: 5rem;
   justify-content: center;
 }
 .cart .side-nav .cart-items .cart-item .cart-img img {
-  width: 100%;
-  align-self: center;
+  width: 120px;
+  height: auto;
 }
-.cart .side-nav .cart-items .cart-item .qty-change div {
+.cart .side-nav .cart-items .cart-item .qty-change {
   display: flex;
+  justify-content: center;
 }
-.cart .side-nav .cart-items .cart-item .qty-change div .btn-qty {
+.cart .side-nav .cart-items .cart-item .qty-change .btn-qty {
   border: 1px solid black;
   border-radius: 50%;
   padding: 0px 8px;
   font-size: 12px;
   color: black;
 }
-.cart .side-nav .cart-items .cart-item .qty-change div .btn-qty:hover {
-  background: black;
+.cart .side-nav .cart-items .cart-item .qty-change .btn-qty:hover {
+  background: #e03550;
   color: white;
 }
 .cart .side-nav .cart-items .cart-item .qty-change .qty {
   margin: 0;
   padding: 2px 5px;
+  font-weight: 600;
 }
 .cart .side-nav .cart-items .cart-item .fa-trash {
   color: black;
 }
+.cart .side-nav .cart-items .cart-item .fa-trash:hover {
+  color: #e03550;
+}
 .cart .side-nav .cart-items .cart-item .price {
   margin: 0;
+  font-weight: 600;
 }
 .cart .side-nav .final {
   display: flex;
-  position: absolute;
+  position: relative;
   align-self: flex-end;
   flex-direction: column;
-  bottom: 10%;
+  padding: 20px 10px;
+  bottom: 0;
 }
 .cart .side-nav .final strong {
   color: black;
   display: flex;
   align-self: flex-end;
-  font-size: 1.75rem;
+  font-size: 1.65em;
   font-weight: 700;
   margin-right: 20px;
   margin-bottom: 1rem;
@@ -833,9 +861,9 @@ header.nav-fixed .header-right li a {
   justify-content: space-evenly;
 }
 .cart .side-nav .final .action .btn {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  padding: 1rem 1.5rem;
+  padding: 0.9rem 1.4rem;
   border: 1px solid black;
   color: black;
   margin-right: 20px;

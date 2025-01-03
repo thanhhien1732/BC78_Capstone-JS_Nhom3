@@ -123,27 +123,43 @@ const renderCart = () => {
     cartItemsContainer.innerHTML = "";
 
     if (cartDetails.length === 0) {
-        cartItemsContainer.innerHTML = "<span class='empty-cart'>Looks Like You Haven't Added Any Product In The Cart</span>";
+        cartItemsContainer.innerHTML = "<span span class='empty-cart'> You Haven't Added Any Product In The Cart!</span>";
         return;
     }
 
     cartDetails.forEach(item => {
         const { name, price, imgSrc, qty } = item;
         const cartItem = `
-            <div class="cart-item">
-                <div class="cart-img">
-                    <img src="${imgSrc}" alt="${name}">
+            <div class="row cart-item">
+                <div class="col-md-3">
+                    <div class="cart-img">
+                        <img src="${imgSrc}" alt="${name}">
+                    </div>
                 </div>
-                <strong class="name">${name}</strong>
-                <span class="qty-change">
-                    <div>
-                        <button class="btn-qty" onclick="qtyChange('${name}', 'sub')"><i class="fas fa-chevron-left"></i></button>
-                        <p class="qty">${qty}</p>
-                        <button class="btn-qty" onclick="qtyChange('${name}', 'add')"><i class="fas fa-chevron-right"></i></button>
+                <div class="col-md-2">
+                    <strong class="name">${name}</strong>
+                </div>
+                <div class="col-md-3">
+                    <span class="qty-change">
+                        <div style="display: flex">
+                            <button class="btn-qty" onclick="qtyChange('${name}', 'sub')">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <p class="qty">${qty}</p>
+                            <button class="btn-qty" onclick="qtyChange('${name}', 'add')">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </span>
-                <p class="price">$${(price * qty).toFixed(2)}</p>
-                <button onclick="removeItem('${name}')"><i class="fas fa-trash"></i></button>
+                <div class="col-md-2">
+                    <p class="price">$${(price * qty).toFixed(2)}</p>
+                </div>
+                <div class="col-md-2">
+                    <button onclick="removeItem('${name}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
             </div>
         `;
         cartItemsContainer.innerHTML += cartItem;
