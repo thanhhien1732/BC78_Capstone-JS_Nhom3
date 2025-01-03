@@ -1,0 +1,38 @@
+.invoice {
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 5% 4%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    align-self: center;
+    flex-direction: column;
+    border-radius: 20px;
+    transition: 0.25s;
+
+    .shipping-items {
+        padding: 10px 0;
+        width: 100%;
+        justify-content: space-between;
+
+
+    }
+
+    .payment {
+        flex-direction: column;
+
+        em {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .order {
+            position: absolute;
+            bottom: 10%;
+            width: 40%;
+            justify-content: space-around;
+        }
+    }
+}

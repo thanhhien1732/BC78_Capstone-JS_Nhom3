@@ -83,10 +83,10 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="#" class="cart-icon">
+                                    <button onclick="sideNav(1)">
                                         <i class="fa-solid fa-cart-shopping"></i>
-                                        <span id="cart-count" class="total-qty">0</span>
-                                    </a>
+                                    </button>
+                                    <span id="cart-count" class="total-qty">0</span>
                                 </li>
 
                                 <li>
@@ -102,16 +102,47 @@
         </div>
     </header>
 
-    <!-- Cart Modal -->
-    <div id="cartModal" class="cart-modal">
-        <div class="cart-content">
-            <h3>Your Cart</h3>
-            <ul id="cart-items"></ul>
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cart-total-price">$0</span>
+    <!-- Cart -->
+    <div class="cart" style="display: none;">
+        <div class="side-nav animate__animated" style="right: -100%;">
+            <button onclick="sideNav(0)"><i class="fas fa-times"></i></button>
+            <h2>Cart</h2>
+            <div class="cart-items">
+                <span class="empty-cart">Looks Like You Haven't Added Any Product In The Cart</span>
             </div>
-            <button id="checkout-btn" class="cart-btn">Checkout</button>
+            <div class="final">
+                <strong>Total: $ <span class="total">0.00</span></strong>
+                <div class="action">
+                    <button onclick="buy()" class="btn buy">Purchase <i class="fas fa-credit-card"
+                            style="color:#6665dd;"></i></button>
+                    <button onclick="clearCart()" class="btn clear">Clear Cart <i class="fas fa-trash"
+                            style="color:#bb342f;"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div onclick="sideNav(0)" class="cover animate__animated animate__fadeIn" style="display: none;"></div>
+    </div>
+
+    <!-- Oder -->
+    <div class="order-now" style="display: none">
+        <div class="invoice">
+            <div class="shipping-items">
+                <div class="item-names"><span>1 x Apple Watch</span><span>1 x Macbook Pro</span><span>1 x iPhone 11
+                        pro</span></div>
+                <div class="items-price"><span>$ 500</span>+<span>$ 2000</span>+<span>$ 2000</span></div>
+            </div>
+            <hr>
+            <div class="payment">
+                <em>payment</em>
+                <div>
+                    <p>total amount to be paid:</p><span class="pay">$ 4500</span>
+                </div>
+            </div>
+            <div class="order">
+                <button onclick="order()" class="btn-order btn">Order Now</button>
+                <button onclick="buy(0)" class="btn-cancel btn">Cancel</button>
+            </div>
         </div>
     </div>
 
@@ -178,16 +209,25 @@
 
     <!-- Product -->
     <section class="product-main-items">
-        <div class="container" style="justify-items: center;">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-10">
                     <div class="product-title">
-                        <h2>- featured products -</h2>
+                        <h2>featured products</h2>
                     </div>
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select" id="filterName">
+                        <option value="all" selected>Tất cả giày</option>
+                        <option value="nike">Nike</option>
+                        <option value="adidas">Adidas</option>
+                    </select>
                 </div>
             </div>
             <!-- Loader -->
-            <div id="loader" style="display: none;" class="loader"></div>
+            <div style="justify-items: center;">
+                <div id="loader" style="display: none;" class="loader"></div>
+            </div>
             <!-- Main Product -->
             <div id="mainProduct" class="row"></div>
         </div>

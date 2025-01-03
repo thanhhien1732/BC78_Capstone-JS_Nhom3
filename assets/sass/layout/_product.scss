@@ -6,11 +6,53 @@
 
         h2 {
             display: inline-block;
-            font-size: 26px;
+            font-size: 24px;
             padding-left: 10px;
             position: relative;
             text-transform: uppercase;
             margin-bottom: 0;
+
+            &::before {
+                background-color: #000;
+                content: "";
+                height: 22px;
+                left: 0;
+                position: absolute;
+                top: 1px;
+                transform: rotate(20deg);
+                width: 2px;
+            }
+
+            &::after {
+                bottom: 4px;
+                color: #f25862;
+                content: "\f04d";
+                font-family: fontawesome;
+                position: absolute;
+                right: -14px;
+                font-size: 7px;
+            }
+        }
+    }
+
+    /* Tùy chỉnh giao diện của select */
+    .form-select {
+        background-color: #f8f8f8;
+        padding: 11px 16px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #e0e0e0;
+            border-color: #aaa;
+        }
+
+        option {
+            background-color: #fff;
+            font-size: 16px;
+            cursor: pointer;
         }
     }
 
