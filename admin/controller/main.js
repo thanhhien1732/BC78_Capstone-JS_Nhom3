@@ -63,6 +63,24 @@ const renderListProduct = data => {
   getEleId('tblDanhSachSP').innerHTML = content
 }
 
+getEleId('btnThemSP').onclick = () => {
+  // updata title
+  getEleId('exampleModalLabel').innerHTML = 'Thêm Sản Phẩm'
+
+  // reset value
+  getEleId('form-product').reset()
+
+  // none button update
+  getEleId('btnupdate').style.display = 'none'
+
+  // create button add
+  const btnAdd = `<button class="btn btn-success" id="handleAdd" onclick="handleAdd()">Thêm</button>`
+  document.getElementsByClassName('modal-footer')[0].innerHTML = btnAdd
+
+  // show button add
+  getEleId('handleAdd').style.display = 'block'
+}
+
 /**
  * Sửa sản phẩm
  */
@@ -86,8 +104,8 @@ const handleEdit = id => {
       getEleId('idSP').value = data.id
       getEleId('TenSP').value = data.name
       getEleId('GiaSP').value = data.price
-      getEleId('MoTa').value = data.description
       getEleId('HinhSP').value = data.imageUrl
+      getEleId('MoTa').value = data.description
     })
     .catch(error => {
       console.log(error)
@@ -157,7 +175,7 @@ getListProduct()
 /**
  * THÊM SẢN PHẨM MỚI
  */
-getEleId('handleAdd').onclick = () => {
+const handleAdd = () => {
   // lấy thông tin sản phẩm
   const product = getInfoProduct()
 
@@ -180,3 +198,52 @@ getEleId('handleAdd').onclick = () => {
     })
 }
 window.handleAdd = handleAdd
+
+/**
+ * TÌM KIẾM SẢN PHẨM
+ */
+getEleId('search').addEventListener('keyup', function () {
+  // Lấy giá trị từ ô input
+  const keyword = getEleId('search').value
+
+  // tạo mảng result = []
+  let result = []
+  // Duyệt qua mảng arr
+  // 1. Duyệt qua mảng arr
+  // 1.1 product = arr[i]
+  // 1.2 Nếu product.name trùng vs keyword thì thêm product vào result
+  // 2. trả về result
+  const promise = api.fetchData()
+  promise
+    .then(result => {
+      result = result.data
+      let content = ''
+      result.forEach((product, i) => {
+        // chuyển keyword và food.name về chữ thường
+        const keywordLowercase = keyword.toLowerCase()
+        const productNameLowercase = product.name.toLowerCase()
+
+        if (productNameLowercase.indexOf(keywordLowercase) !== -1) {
+          content += `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${product.name}</td>
+                        <td>${product.price}</td>
+                        <td>
+                            <img src="./../../assets/img/${product.imageUrl}" width="50" />
+                        </td>
+                        <td>${product.description}</td>
+                        <td>
+                            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal" onclick="handleEdit('${product.id}')">Edit</button>
+                            <button class="btn btn-danger" onclick="handleDelete('${product.id}')">Delete</button>
+                        </td>
+                    </tr>
+                `
+        }
+      })
+      getEleId('tblDanhSachSP').innerHTML = content
+    })
+    .catch(error => {
+      console.log(error)
+    })
+})
