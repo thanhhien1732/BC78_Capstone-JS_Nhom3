@@ -169,13 +169,23 @@ const renderCart = () => {
 
 // Cập nhật tổng giá và số lượng trong giỏ hàng
 const updateCartSummary = () => {
+    // Tính tổng số lượng sản phẩm
     const totalQty = cartDetails.reduce((acc, item) => acc + item.qty, 0);
 
-    // Chọn tất cả các phần tử có class "cart-count"
-    const cartCountElements = document.querySelectorAll(".cart-count");
+    // Tính tổng giá trị
+    const totalPrice = cartDetails.reduce((acc, item) => acc + item.price * item.qty, 0);
+
+    // Cập nhật số lượng sản phẩm hiển thị trong các phần tử có class "cart-count"
+    const cartCountElements = document.querySelectorAll(".total-qty");
     cartCountElements.forEach((element) => {
         element.innerText = totalQty;
     });
+
+    // Cập nhật tổng giá trị sản phẩm trong phần tử có class "total"
+    const totalElement = document.querySelector(".total");
+    if (totalElement) {
+        totalElement.innerText = totalPrice.toFixed(2); // Hiển thị với 2 chữ số thập phân
+    }
 };
 
 // Hiển thị/ẩn thanh điều hướng bên phải
