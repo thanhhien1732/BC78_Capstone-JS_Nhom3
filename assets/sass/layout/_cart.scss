@@ -12,7 +12,7 @@
         background: #fff;
         opacity: 0.95;
         height: 100%;
-        width: 60%;
+        width: 55%;
         flex-direction: column;
         top: 0;
         right: -100%;
@@ -93,9 +93,10 @@
                 text-align: center;
                 border-bottom: 1px solid black;
                 padding: 10px 0;
+                cursor: pointer;
 
                 &:hover {
-                    background: rgba(255, 255, 255, 0.25);
+                    background: rgba(175, 175, 175, 0.25);
                 }
 
                 .cart-img {
@@ -127,7 +128,7 @@
 
                     .qty {
                         margin: 0;
-                        padding: 2px 5px;
+                        padding: 2px 6px;
                         font-weight: 600;
                     }
                 }

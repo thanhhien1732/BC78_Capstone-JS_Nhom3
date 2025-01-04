@@ -23,7 +23,7 @@ const renderListProduct = (data) => {
                         <ul class="add-to-link">
                             <li><a href="#"> <i class="fa fa-search"></i></a></li>
                             <li><a href="#"> <i class="fa-regular fa-heart"></i></a></li>
-                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                            <li><a href="#" class="btn-refresh"> <i class="fa fa-refresh"></i></a></li>
                         </ul>
                     </div>
                     <div class="product-price">
@@ -77,7 +77,8 @@ const fetchListProduct = () => {
 
 fetchListProduct();
 
-// ================== Tính năng giỏ hàng ==================
+
+// ==================== Tính năng giỏ hàng ======================
 let cartDetails = [];
 
 // Thêm sản phẩm vào giỏ hàng
@@ -220,14 +221,14 @@ window.buy = () => {
         return;
     }
 
-    alert("Thank you for your purchase!");
-    clearCart();
+    showOrder();
 };
 
 renderCart();
 updateCartSummary();
 
-// ================== Lọc sản phẩm ==================
+
+// ======================== Lọc sản phẩm ============================
 let originalProductList = [];
 
 // Lọc và render danh sách sản phẩm dựa trên loại giày
@@ -249,3 +250,65 @@ const filterProducts = () => {
 };
 
 getEleId("filterName").addEventListener("change", filterProducts);
+
+
+// ======================== Tính năng Order ============================
+// Hiển thị giao diện Order
+const showOrder = () => {
+    const orderNowElement = document.querySelector(".order-now");
+    const invoiceElement = document.querySelector(".invoice");
+
+    // Kiểm tra nếu phần tử tồn tại
+    if (!orderNowElement || !invoiceElement) {
+        console.error("Element '.order-now' or '.invoice' not found");
+        return;
+    }
+
+    // Tạo nội dung hóa đơn
+    let orderItems = cartDetails.map(item => `
+        <span>${item.qty} x ${item.name}</span>
+    `).join("");
+
+    let orderPrices = cartDetails.map(item => `
+        <span>$ ${(item.price * item.qty).toFixed(2)}</span>
+    `).join("");
+
+    const totalAmount = cartDetails.reduce((acc, item) => acc + item.price * item.qty, 0);
+
+    // Cập nhật nội dung hóa đơn
+    invoiceElement.innerHTML = `
+        <div class="shipping-items">
+            <div class="item-names">${orderItems}</div>
+            <div class="items-price">${orderPrices}</div>
+        </div>
+        <hr>
+        <div class="payment">
+            <em>Payment</em>
+            <div>
+                <p>Total amount to be paid: </p>
+                <span class="pay">$ ${totalAmount.toFixed(2)}</span>
+            </div>
+        </div>
+        <div class="order">
+            <button onclick="orderComplete()" class="btn-order btn">Order Now</button>
+            <button onclick="cancelOrder()" class="btn-cancel btn">Cancel</button>
+        </div>
+    `;
+
+    // Hiển thị Order và ẩn Cart
+    document.querySelector(".cart").style.display = "none";
+    orderNowElement.style.display = "flex"; // Sử dụng 'flex' để hiển thị
+};
+
+// Hoàn tất đơn hàng
+window.orderComplete = () => {
+    alert("Your order has been placed successfully!");
+    document.querySelector(".order-now").style.display = "none";
+    clearCart(); // Xóa giỏ hàng sau khi hoàn tất đơn hàng
+};
+
+// Hủy đơn hàng
+window.cancelOrder = () => {
+    document.querySelector(".order-now").style.display = "none";
+    sideNav(1); // Hiển thị lại giỏ hàng
+};
