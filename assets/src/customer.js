@@ -14,9 +14,9 @@ const renderListProduct = (data) => {
                         <span>new</span>
                     </div>
                     <div class="product-img">
-                        <a href="#">
+                        <div>
                             <img src="./assets/img/${imageUrl}">
-                        </a>
+                        </div>
                     </div>
                     <div class="actions">
                         <button onclick="addItem('${name}', ${price}, './assets/img/${imageUrl}')" class="cart-btn add-btn">Add to Cart</button>
@@ -170,13 +170,14 @@ const renderCart = () => {
 // Cập nhật tổng giá và số lượng trong giỏ hàng
 const updateCartSummary = () => {
     const totalQty = cartDetails.reduce((acc, item) => acc + item.qty, 0);
-    const totalPrice = cartDetails.reduce((acc, item) => acc + item.price * item.qty, 0);
 
-    document.querySelector(".total-qty").innerText = totalQty;
-    document.querySelector(".total").innerText = totalPrice.toFixed(2);
+    // Chọn tất cả các phần tử có class "cart-count"
+    const cartCountElements = document.querySelectorAll(".cart-count");
+    cartCountElements.forEach((element) => {
+        element.innerText = totalQty;
+    });
 };
 
-// Hiển thị/ẩn thanh điều hướng bên phải
 // Hiển thị/ẩn thanh điều hướng bên phải
 window.sideNav = action => {
     const sideNavElement = document.querySelector(".side-nav");
@@ -302,9 +303,21 @@ const showOrder = () => {
 
 // Hoàn tất đơn hàng
 window.orderComplete = () => {
-    alert("Your order has been placed successfully!");
+    // Hiển thị giao diện "Cảm ơn"
+    const orderNowElement = document.querySelector(".invoice");
+    orderNowElement.innerHTML = `
+        <div class="order-details animate__animated animate__fadeIn">
+            <em class="thanks">Thank you for shopping!</em>
+            <button onclick="okay(event)" class="btn-ok">Continue</button>
+        </div>
+    `;
+};
+
+// Kết thúc mua sắm
+window.okay = (event) => {
     document.querySelector(".order-now").style.display = "none";
-    clearCart(); // Xóa giỏ hàng sau khi hoàn tất đơn hàng
+    clearCart();
+    document.body.classList.remove("no-scroll");
 };
 
 // Hủy đơn hàng

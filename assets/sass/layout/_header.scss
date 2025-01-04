@@ -14,6 +14,12 @@ header {
             font-size: 30px;
             font-weight: bold;
             color: #e03550;
+
+            @media (max-width: 768px) {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 10px;
+            }
         }
 
         .main-menu {
@@ -61,9 +67,57 @@ header {
                                 width: 100%;
                             }
                         }
-
                     }
                 }
+            }
+
+            @media (max-width: 768px),
+            (max-width: 992px) {
+                display: none;
+                flex-direction: column;
+                background-color: #000000b0;
+                align-items: center;
+                padding: 20px 0;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                z-index: 100;
+
+                &.open {
+                    display: flex; // Hiển thị menu khi mở
+                }
+
+                ul {
+                    flex-direction: column;
+
+                    li {
+                        margin: 10px 0;
+
+                        a {
+                            color: #fff;
+                            text-align: center;
+
+                            &::before {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+
+            @media (max-width: 768px) {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 15px;
             }
         }
 
@@ -105,6 +159,37 @@ header {
                     }
                 }
             }
+
+            @media (max-width: 768px) {
+                margin-top: 10px;
+
+                li {
+                    display: inline-block;
+                    float: none;
+                    margin: 0 10px;
+
+                    .total-qty {
+                        font-size: 10px;
+                        width: 16px;
+                        height: 16px;
+                        line-height: 16px;
+                    }
+                }
+            }
+
+            @media (max-width: 576px) {
+                li {
+                    font-size: 20px;
+                    margin: 0 5px;
+
+                    .total-qty {
+                        font-size: 8px;
+                        width: 12px;
+                        height: 12px;
+                        line-height: 12px;
+                    }
+                }
+            }
         }
     }
 }
@@ -136,6 +221,125 @@ header.nav-fixed {
 
         a {
             color: #333;
+        }
+    }
+}
+
+/* Tablet (max-width: 1280px) */
+@media (max-width: 1280px) {
+    header {
+        padding: 10px 0;
+
+        .header-content {
+            .header-logo {
+                font-size: 28px;
+            }
+
+            .main-menu ul li a {
+                font-size: 14px;
+            }
+
+            .header-right li {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+    header {
+        .header-content {
+            .main-menu {
+                display: none; // Ẩn menu chính
+            }
+
+            .hamburger-menu {
+                display: block; // Hiển thị hamburger menu
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 28px;
+            }
+
+            .header-logo {
+                flex: 1;
+                text-align: center; // Logo ở giữa
+                font-size: 26px;
+            }
+
+            .header-right {
+                ul {
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 15px;
+
+                    li {
+                        font-size: 22px;
+
+                        &:first-child {
+                            order: 2; // Giữ icon giỏ hàng ở vị trí đầu tiên
+                        }
+
+                        &:last-child {
+                            order: 1; // Giữ icon tài khoản ở vị trí cuối cùng
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    header.nav-fixed {
+        .hamburger-menu {
+            color: #333;
+        }
+
+        .main-menu {
+            background-color: #ececec;
+        }
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        .header-content {
+            flex-wrap: wrap; // Hỗ trợ các phần tử không bị tràn
+
+            .hamburger-menu {
+                font-size: 24px;
+            }
+
+            .header-logo {
+                font-size: 24px;
+            }
+
+            .header-right li {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+/* Mobile Extra Small (max-width: 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 5px 0;
+
+        .header-content {
+            .header-logo {
+                font-size: 20px;
+            }
+
+            .hamburger-menu {
+                font-size: 20px;
+            }
+
+            .header-right li {
+                font-size: 18px;
+            }
         }
     }
 }

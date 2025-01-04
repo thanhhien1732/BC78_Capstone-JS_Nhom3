@@ -116,3 +116,169 @@
         }
     }
 }
+
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+    .newsleter-area {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .newsleter,
+        .follow {
+            padding: 10px 0;
+
+            h3 {
+                font-size: 16px;
+
+                &::before {
+                    height: 35px;
+                    line-height: 35px;
+                    width: 35px;
+                }
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+
+        .newsleter {
+            .Subscribe {
+                input {
+                    font-size: 11px;
+                    padding: 10px 8px;
+                }
+
+                button {
+                    font-size: 11px;
+                    padding: 0 25px;
+                }
+            }
+        }
+
+        .follow {
+            .follow-link {
+                li {
+                    a {
+                        font-size: 11px;
+                        height: 28px;
+                        line-height: 28px;
+                        width: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .newsleter-area {
+        background: #f5f5f5;
+        /* Đơn giản hóa background */
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        .newsleter,
+        .follow {
+            padding: 10px 0;
+
+            h3 {
+                font-size: 14px;
+
+                &::before {
+                    height: 30px;
+                    line-height: 30px;
+                    width: 30px;
+                }
+            }
+
+            p {
+                font-size: 11px;
+            }
+        }
+
+        .newsleter {
+            .Subscribe {
+                input {
+                    font-size: 10px;
+                    padding: 8px 6px;
+                }
+
+                button {
+                    font-size: 10px;
+                    padding: 0 20px;
+                }
+            }
+        }
+
+        .follow {
+            .follow-link {
+                li {
+                    a {
+                        font-size: 10px;
+                        height: 25px;
+                        line-height: 25px;
+                        width: 25px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobile Extra Small (max-width: 576px) */
+@media (max-width: 576px) {
+    .newsleter-area {
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .newsleter,
+        .follow {
+            padding: 10px 0;
+
+            h3 {
+                font-size: 13px;
+
+                &::before {
+                    height: 25px;
+                    line-height: 25px;
+                    width: 25px;
+                }
+            }
+
+            p {
+                font-size: 10px;
+            }
+        }
+
+        .newsleter {
+            .Subscribe {
+                input {
+                    font-size: 9px;
+                    padding: 6px 5px;
+                }
+
+                button {
+                    font-size: 9px;
+                    padding: 0 15px;
+                }
+            }
+        }
+
+        .follow {
+            .follow-link {
+                li {
+                    a {
+                        font-size: 9px;
+                        height: 22px;
+                        line-height: 22px;
+                        width: 22px;
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

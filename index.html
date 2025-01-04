@@ -56,15 +56,42 @@
     <header>
         <div class="container">
             <div class="row header-content">
-                <div class="col-lg-3">
-                    <!-- logo -->
+                <!-- Hamburger Menu -->
+                <div class="col-2 d-lg-none">
+                    <span class="hamburger-menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </span>
+                </div>
+
+                <!-- Logo -->
+                <div class="col-8 col-lg-3 text-center">
                     <a href="#" class="header-logo">
                         The James
                     </a>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="main-menu">
+                <!-- Header Right (Mobile) -->
+                <div class="col-2 d-lg-none text-end">
+                    <div class="header-right">
+                        <ul>
+                            <li>
+                                <button onclick="sideNav(1)">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                                <span class="cart-count total-qty">0</span>
+                            </li>
+                            <li>
+                                <a href="./admin/index.html">
+                                    <i class="fa-solid fa-user-gear"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Main Menu -->
+                <div class="col-lg-6 d-lg-block">
+                    <div class="main-menu toggle-menu">
                         <nav>
                             <ul class="mx-lg-auto">
                                 <li class="active"><a href="index.html">Home</a></li>
@@ -78,24 +105,22 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3">
+                <!-- Header Right (Desktop) -->
+                <div class="col-lg-3 d-none d-lg-block">
                     <div class="header-right">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <button onclick="sideNav(1)">
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                    </button>
-                                    <span id="cart-count" class="total-qty">0</span>
-                                </li>
-
-                                <li>
-                                    <a href="./admin/index.html">
-                                        <i class="fa-solid fa-user-gear"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <ul>
+                            <li>
+                                <button onclick="sideNav(1)">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                                <span class="cart-count total-qty">0</span>
+                            </li>
+                            <li>
+                                <a href="./admin/index.html">
+                                    <i class="fa-solid fa-user-gear"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -122,11 +147,9 @@
         <div onclick="sideNav(0)" class="cover animate__animated animate__fadeIn" style="display: none;"></div>
     </div>
 
-    <!-- Oder -->
-    <div class="order-now" style="display: none">
-        <div class="invoice">
-            <div class="order-details"><em class="thanks">Thanks for shopping with us</em></div>
-        </div>
+    <!-- Order -->
+    <div class="order-now animate__animated animate__fadeInUp" style="display: none">
+        <div class="invoice"></div>
     </div>
 
     <!-- Carousel -->
@@ -199,7 +222,7 @@
                         <h2>featured products</h2>
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 ">
                     <select class="form-select" id="filterName">
                         <option value="all" selected>Tất cả giày</option>
                         <option value="nike">Nike</option>
@@ -383,6 +406,25 @@
                     header.classList.remove("nav-fixed");
                 }
             });
+        });
+    </script>
+
+    <!-- Menu JS -->
+    <script>
+        const hamburgerMenu = document.querySelector(".hamburger-menu");
+        const mainMenu = document.querySelector(".toggle-menu");
+
+        // Xử lý toggle menu
+        hamburgerMenu.addEventListener("click", () => {
+            console.log("Hamburger menu clicked"); // Debug: Xem sự kiện có được gọi không
+            mainMenu.classList.toggle("open");
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!mainMenu.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+                mainMenu.classList.remove("open");
+            }
         });
     </script>
 

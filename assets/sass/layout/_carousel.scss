@@ -86,3 +86,114 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+// Responsive for tablets and large phones
+@media (max-width: 992px) {
+    .slider-area {
+        .slider-content {
+            min-height: 500px; // Reduce height for smaller screens
+
+            img {
+                margin-top: 80px; // Adjust spacing for smaller screens
+                max-width: 30%; // Increase logo size
+            }
+
+            h1 {
+                font-size: 40px; // Smaller font for headlines
+                letter-spacing: 5px; // Adjust letter spacing
+            }
+
+            h2 {
+                font-size: 45px; // Smaller secondary headline
+            }
+
+            h3 {
+                font-size: 18px; // Adjust description text
+            }
+
+            span {
+                font-size: 12px; // Adjust button text size
+                padding: 8px 25px; // Adjust padding for smaller buttons
+            }
+        }
+
+        .owl-nav {
+            top: 55%; // Adjust arrow position
+        }
+    }
+}
+
+// Responsive for small devices (phones)
+@media (max-width: 768px) {
+    .slider-area {
+        top: -60px; // Adjust top position
+
+        .slider-content {
+            min-height: 420px; // Further reduce height
+
+            img {
+                margin-top: 60px;
+                max-width: 40%; // Larger logo for visibility
+            }
+
+            h1 {
+                font-size: 30px; // Smaller headline
+                letter-spacing: 3px; // Reduced spacing for readability
+            }
+
+            h2 {
+                font-size: 35px; // Adjusted secondary headline
+            }
+
+            h3 {
+                font-size: 16px; // Smaller description
+                margin: 20px 0 40px; // Adjust margin for spacing
+            }
+
+            span {
+                font-size: 10px; // Button text adjustment
+                padding: 6px 20px; // Smaller button padding
+            }
+        }
+
+        .owl-nav {
+            display: none; // Hide navigation arrows for better usability
+        }
+    }
+}
+
+// Responsive for extra-small devices (very small phones)
+@media (max-width: 576px) {
+    .slider-area {
+        .slider-content {
+            min-height: 360px; // Minimum height for small devices
+
+            img {
+                margin-top: 50px;
+                max-width: 50%; // Larger logo for visibility
+            }
+
+            h1 {
+                font-size: 24px; // Reduce headline size further
+                letter-spacing: 2px;
+            }
+
+            h2 {
+                font-size: 28px; // Adjust secondary headline
+            }
+
+            h3 {
+                font-size: 14px; // Further reduce description size
+            }
+
+            span {
+                font-size: 10px; // Minimal button text size
+                padding: 5px 15px; // Smaller padding
+            }
+        }
+
+        .owl-nav {
+            display: none; // Maintain simplicity on extra-small screens
+        }
+    }
+}
