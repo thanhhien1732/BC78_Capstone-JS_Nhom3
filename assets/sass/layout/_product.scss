@@ -6,11 +6,53 @@
 
         h2 {
             display: inline-block;
-            font-size: 26px;
+            font-size: 24px;
             padding-left: 10px;
             position: relative;
             text-transform: uppercase;
             margin-bottom: 0;
+
+            &::before {
+                background-color: #000;
+                content: "";
+                height: 22px;
+                left: 0;
+                position: absolute;
+                top: 1px;
+                transform: rotate(20deg);
+                width: 2px;
+            }
+
+            &::after {
+                bottom: 4px;
+                color: #f25862;
+                content: "\f04d";
+                font-family: fontawesome;
+                position: absolute;
+                right: -14px;
+                font-size: 7px;
+            }
+        }
+    }
+
+    /* Tùy chỉnh giao diện của select */
+    .form-select {
+        background-color: #f8f8f8;
+        padding: 11px 16px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #e0e0e0;
+            border-color: #aaa;
+        }
+
+        option {
+            background-color: #fff;
+            font-size: 16px;
+            cursor: pointer;
         }
     }
 
@@ -21,6 +63,7 @@
         border-right: 1px solid #fff;
         overflow: hidden;
         position: relative;
+        border-radius: 10px;
 
         .level-pro-new {
             background-color: #5eb4c1;
@@ -33,21 +76,37 @@
             text-transform: uppercase;
             top: 0;
             z-index: 5;
+            border-bottom-left-radius: 10px;
         }
 
         .product-img {
+            position: relative;
+            width: 100%;
+            padding-top: 90%;
+            overflow: hidden;
+            background-color: #EFEFEF;
+            border-radius: 10px;
+
             a {
-                border-bottom: 0px solid #e6e6e6;
-                display: block;
-                position: relative;
-                background-color: #EFEFEF;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                    display: block;
+                }
             }
         }
 
         .actions {
-            background-color: #efefef;
-            border-bottom: 0 solid #e6e6e6;
-            border-top: 0 solid #e6e6e6;
             bottom: 78px;
             margin-top: 0;
             opacity: 0;
@@ -57,6 +116,7 @@
             transition: all 0.3s ease 0s;
             visibility: hidden;
             z-index: 99;
+            border-radius: 10px;
 
             button.cart-btn {
                 background-color: #333333;
@@ -69,6 +129,8 @@
                 font-size: 12px;
                 font-weight: 700;
                 text-transform: uppercase;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
 
                 &:hover {
                     background-color: #f25862;
@@ -79,7 +141,7 @@
                 float: left;
 
                 li {
-                    margin: 0px -2px;
+                    margin: 0px -3px;
                     display: inline-block;
 
                     a {
@@ -94,17 +156,9 @@
                         display: block;
                         text-align: center;
 
-                        &::after {
-                            background-color: #E03550;
-                            content: "";
-                            height: 100%;
-                            left: 0;
-                            position: absolute;
-                            top: 0;
-                            transform: translate3d(0px, 100%, 0px);
-                            transition: all 0.3s ease 0s;
-                            width: 100%;
-                            z-index: -1;
+                        &.btn-refresh {
+                            border-top-right-radius: 10px;
+                            border-bottom-right-radius: 10px;
                         }
 
                         &:hover {

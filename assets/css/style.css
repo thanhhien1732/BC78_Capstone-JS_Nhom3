@@ -92,10 +92,23 @@ body {
   padding-left: 15px;
 }
 
+button {
+  border: none;
+  background: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
 header {
   background-color: transparent;
   position: relative;
-  z-index: 9;
+  z-index: 100;
   padding: 15px 0;
   border-bottom: 1px solid rgba(231, 231, 231, 0.18);
   transition: all 0.5s ease 0s;
@@ -154,13 +167,10 @@ header .header-content .header-right li {
   font-size: 24px;
   margin-left: 35px;
 }
-header .header-content .header-right li a {
-  color: #fff;
-}
-header .header-content .header-right li a:hover {
+header .header-content .header-right li .fa-cart-shopping:hover {
   color: #e03550;
 }
-header .header-content .header-right li a .total-qty {
+header .header-content .header-right li .total-qty {
   position: absolute;
   top: -2px;
   right: -8px;
@@ -175,6 +185,12 @@ header .header-content .header-right li a .total-qty {
   border-radius: 50%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+header .header-content .header-right li a {
+  color: #fff;
+}
+header .header-content .header-right li a:hover {
+  color: #e03550;
+}
 
 /* Header khi cố định */
 header.nav-fixed {
@@ -184,54 +200,21 @@ header.nav-fixed {
   right: 0;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 100;
   transition: all 0.3s ease-in-out;
 }
 header.nav-fixed .main-menu ul li a {
   color: #333;
 }
-header.nav-fixed .header-right li a {
+header.nav-fixed .header-right li .fa-cart-shopping {
   color: #333;
 }
-header.nav-fixed .header-right li a .total-qty {
+header.nav-fixed .header-right li .total-qty {
   background-color: #fff;
   color: #333;
 }
-
-.cart-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.cart-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 400px;
-}
-
-.cart-total {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-#cart-items {
-  list-style: none;
-  padding: 0;
-}
-
-#cart-items li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+header.nav-fixed .header-right li a {
+  color: #333;
 }
 
 .slider-area {
@@ -289,7 +272,6 @@ header.nav-fixed .header-right li a .total-qty {
 .slider-area span:hover {
   color: #e03550;
   border-color: #e03550;
-  background-color: none;
 }
 .slider-area .owl-nav {
   position: absolute;
@@ -348,17 +330,54 @@ header.nav-fixed .header-right li a .total-qty {
 
 .product-main-items {
   padding-bottom: 55px;
+  /* Tùy chỉnh giao diện của select */
 }
 .product-main-items .product-title {
   margin-bottom: 40px;
 }
 .product-main-items .product-title h2 {
   display: inline-block;
-  font-size: 26px;
+  font-size: 24px;
   padding-left: 10px;
   position: relative;
   text-transform: uppercase;
   margin-bottom: 0;
+}
+.product-main-items .product-title h2::before {
+  background-color: #000;
+  content: "";
+  height: 22px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  transform: rotate(20deg);
+  width: 2px;
+}
+.product-main-items .product-title h2::after {
+  bottom: 4px;
+  color: #f25862;
+  content: "\f04d";
+  font-family: fontawesome;
+  position: absolute;
+  right: -14px;
+  font-size: 7px;
+}
+.product-main-items .form-select {
+  background-color: #f8f8f8;
+  padding: 11px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.product-main-items .form-select:hover {
+  background-color: #e0e0e0;
+  border-color: #aaa;
+}
+.product-main-items .form-select option {
+  background-color: #fff;
+  font-size: 16px;
+  cursor: pointer;
 }
 .product-main-items .single-product {
   float: left;
@@ -367,6 +386,7 @@ header.nav-fixed .header-right li a .total-qty {
   border-right: 1px solid #fff;
   overflow: hidden;
   position: relative;
+  border-radius: 10px;
 }
 .product-main-items .single-product .level-pro-new {
   background-color: #5eb4c1;
@@ -379,17 +399,36 @@ header.nav-fixed .header-right li a .total-qty {
   text-transform: uppercase;
   top: 0;
   z-index: 5;
+  border-bottom-left-radius: 10px;
+}
+.product-main-items .single-product .product-img {
+  position: relative;
+  width: 100%;
+  padding-top: 90%;
+  overflow: hidden;
+  background-color: #EFEFEF;
+  border-radius: 10px;
 }
 .product-main-items .single-product .product-img a {
-  border-bottom: 0px solid #e6e6e6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-main-items .single-product .product-img a img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
   display: block;
   position: relative;
-  background-color: #efefef;
+  background-color: #EFEFEF;
 }
 .product-main-items .single-product .actions {
-  background-color: #efefef;
-  border-bottom: 0 solid #e6e6e6;
-  border-top: 0 solid #e6e6e6;
   bottom: 78px;
   margin-top: 0;
   opacity: 0;
@@ -399,6 +438,7 @@ header.nav-fixed .header-right li a .total-qty {
   transition: all 0.3s ease 0s;
   visibility: hidden;
   z-index: 99;
+  border-radius: 10px;
 }
 .product-main-items .single-product .actions button.cart-btn {
   background-color: #333333;
@@ -411,6 +451,8 @@ header.nav-fixed .header-right li a .total-qty {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .product-main-items .single-product .actions button.cart-btn:hover {
   background-color: #f25862;
@@ -419,7 +461,7 @@ header.nav-fixed .header-right li a .total-qty {
   float: left;
 }
 .product-main-items .single-product .actions .add-to-link li {
-  margin: 0px -2px;
+  margin: 0px -3px;
   display: inline-block;
 }
 .product-main-items .single-product .actions .add-to-link li a {
@@ -435,7 +477,7 @@ header.nav-fixed .header-right li a .total-qty {
   text-align: center;
 }
 .product-main-items .single-product .actions .add-to-link li a::after {
-  background-color: #e03550;
+  background-color: #E03550;
   content: "";
   height: 100%;
   left: 0;
@@ -688,19 +730,4 @@ header.nav-fixed .header-right li a .total-qty {
   100% {
     transform: rotate(360deg);
   }
-} /*# sourceMappingURL=style.css.map */
-
-/* ADMIN */
-.modal-body {
-  padding: 1rem;
-}
-
-.modal-body .form-group {
-  margin-bottom: 0.5rem;
-}
-
-.modal-body .form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
+}/*# sourceMappingURL=style.css.map */

@@ -84,3 +84,16 @@ body {
     padding-right: 15px;
     padding-left: 15px;
 }
+
+button {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
