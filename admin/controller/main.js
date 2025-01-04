@@ -132,6 +132,9 @@ getEleId('btnThemSP').onclick = () => {
 
   // show button add
   getEleId('handleAdd').style.display = 'block'
+
+  // mở khóa input id
+  getEleId('idSP').removeAttribute('disabled')
 }
 
 /**
@@ -155,6 +158,7 @@ const handleEdit = id => {
       const { data } = result
       // dom tới các thẻ input gán value
       getEleId('idSP').value = data.id
+      getEleId('idSP').setAttribute('disabled', true)
       getEleId('TenSP').value = data.name
       getEleId('GiaSP').value = data.price
       getEleId('HinhSP').value = data.imageUrl
