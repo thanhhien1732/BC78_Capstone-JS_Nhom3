@@ -1,14 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADMIN</title>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+    <!-- Font Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-<body>
+    <!-- Font Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
 
-</body>
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
+    <!-- Owl Carousel 2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Owl Carousel 2 Theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Animate CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+      integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <style>
+      .invalid-feedback{
+        display: none;
+      width: 100%;
+      margin-top: .25rem;
+      font-size: 80%;
+      color: #dc3545;
+      }
+    </style>
+  
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header style="background-color: #313131">
+      <div class="container">
+        <div class="row header-content">
+          <div class="col-lg-3">
+            <!-- logo -->
+            <a href="#" class="header-logo"> The James </a>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="main-menu">
+              <nav>
+                <ul class="mx-lg-auto">
+                  <li class="active"><a href="index.html">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Shop</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Pages</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="header-right">
+              <nav>
+                <ul>
+                  <li>
+                    <a href="../index.html">
+                      <i class="fa-solid fa-store"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Main Content -->
+    <section class="search">
+      <div class="container">
+        <div class="row1" style="display: flex; justify-content: space-between;">
+          <h3 style="margin: 15px 0px;">DANH SÁCH SẢN PHẨM</h3>
+          <div class="form-group row" style="display: flex; align-items: center;">
+            <div class="col-sm-10">
+              <select class="custom-select" id="selLoai" style="padding: 5px; border: 1px solid; border-radius: 5px;">
+                <option value="default">Sắp xếp</option>
+                <option value="small">Giá từ nhỏ đến lớn</option>
+                <option value="big">Giá từ lớn đến nhỏ</option>             
+              </select>
+            </div>
+          </div>
+        </div>
+        <div
+          class="innertext"
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0px;
+          "
+        >
+          <div class="right" style="flex: auto; width: 70%">
+            <!-- Button trigger modal -->
+            <button
+              id="btnThemSP"
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#myModal"
+            >
+              <i class="fa fa-plus mr-1"></i>
+              Thêm Mới
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="myModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Thêm Sản Phẩm
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="form-product">
+                      <div class="form-group">
+                        <label style="font-weight: 700;"style="font-weight: 700;">Mã Sản Phẩm:</label style="font-weight: 700;">
+                        <input
+                          id="idSP"
+                          class="form-control"
+                          placeholder="Nhập ID sản phẩm"
+                        />
+                        <div id="invalidID" class="invalid-feedback">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <labellabel style="font-weight: 700;"style="font-weight: 700;">Tên Sản Phẩm:</labellabel>
+                        <input
+                          id="TenSP"
+                          class="form-control"
+                          placeholder="Nhập vào tên sản phẩm"
+                        />
+                        <div id="invalidTen" class="invalid-feedback">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label style="font-weight: 700;"style="font-weight: 700;">Giá:</label>
+                        <input
+                          id="GiaSP"
+                          class="form-control"
+                          placeholder="Nhập vào giá"
+                        />
+                        <div id="invalidPrice" class="invalid-feedback">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label style="font-weight: 700;"style="font-weight: 700;">Mô tả: </label>
+                        <textarea name="" id="MoTa" class="form-control"></textarea>
+                        <div id="invalidDes" class="invalid-feedback">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label style="font-weight: 700;"style="font-weight: 700;">Hình Ảnh:</label>
+                        <input
+                          id="HinhSP"
+                          class="form-control"
+                          placeholder="Nhập vào hình sản phẩm"
+                        />
+                        <div id="invalidImg" class="invalid-feedback">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Đóng
+                    </button>
+                    <button class="btn btn-success" id="handleAdd" onclick="handleAdd()">Thêm</button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="left">
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Nhập từ khóa"
+                  aria-label="Search"
+                  id="search"
+                  style="border-color: #313131"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="tblSanPham" id="tblSanPham">
+            <!-- BEGIN TABLE SẢN PHẨM -->
+            <table class="table table-bordered">
+              <thead>
+                <th>ID</th>
+                <th>Tên Sản Phẩm</th>
+                <th>Giá</th>
+                <th>Hình Ảnh</th>
+                <th>Mô Tả</th>
+                <th>Action</th>
+              </thead>
+              <tbody id="tblDanhSachSP"></tbody>
+            </table>
+            <!-- END TABLE SẢN PHẨM -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jQuery JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Owl Carousel 2 JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+ <!-- Axios CDN -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"
+ integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg=="
+ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module" src="./controller/main.js"></script>
+  </body>
 </html>
