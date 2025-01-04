@@ -58,7 +58,7 @@ a {
 }
 
 a:hover {
-  color: #F25862;
+  color: #f25862;
   text-decoration: none;
 }
 
@@ -384,7 +384,7 @@ header.nav-fixed .header-right li a .total-qty {
   border-bottom: 0px solid #e6e6e6;
   display: block;
   position: relative;
-  background-color: #EFEFEF;
+  background-color: #efefef;
 }
 .product-main-items .single-product .actions {
   background-color: #efefef;
@@ -435,7 +435,7 @@ header.nav-fixed .header-right li a .total-qty {
   text-align: center;
 }
 .product-main-items .single-product .actions .add-to-link li a::after {
-  background-color: #E03550;
+  background-color: #e03550;
   content: "";
   height: 100%;
   left: 0;
@@ -479,7 +479,8 @@ header.nav-fixed .header-right li a .total-qty {
 }
 
 .newsleter-area {
-  background: rgba(0, 0, 0, 0) linear-gradient(90deg, #f5f5f5 50%, #eae8e8 50%) repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) linear-gradient(90deg, #f5f5f5 50%, #eae8e8 50%)
+    repeat scroll 0 0;
   margin-top: 40px;
   padding-top: 35px;
   padding-bottom: 35px;
@@ -687,4 +688,19 @@ header.nav-fixed .header-right li a .total-qty {
   100% {
     transform: rotate(360deg);
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
+
+/* ADMIN */
+.modal-body {
+  padding: 1rem;
+}
+
+.modal-body .form-group {
+  margin-bottom: 0.5rem;
+}
+
+.modal-body .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
